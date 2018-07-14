@@ -7,7 +7,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --install-dir=bin && mv /usr/bin/composer.phar /usr/bin/composer && chmod +x /usr/bin/composer
 ## Install nodejs ##
 RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - && yum -y install nodejs
-
+RUN npm install -g @angular/cli
 ADD ./shell.sh /usr/local/bin/shell.sh
 RUN chmod 777 /usr/local/bin/shell.sh
 
