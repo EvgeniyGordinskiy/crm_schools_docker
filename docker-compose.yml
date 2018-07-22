@@ -45,7 +45,7 @@ services:
   angular:
    build: ./angular
    ports:
-    - 4200:4200
+    - 4200:80
    volumes:
     - ../crm_schools_frontend:/data/crm_schools/httpdocs_angular
    depends_on:
@@ -62,7 +62,7 @@ services:
       MYSQL_PASSWORD: 'admin'
       MYSQL_ALLOW_EMPTY_PASSWORD: 'false'
     ports:
-      - 3307:3306
+      - 3306:80
   artisan:
     build: ./artisan
     volumes:
